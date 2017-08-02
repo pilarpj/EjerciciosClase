@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"/>
+	<title>Login</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="jumbotron">
+		<p>Formulario de validación</p>
+	</div>
+	
+	<form action="/user/validar" method="post">
+		<input class="form-control" name="user" required="required" type="text" placeholder="Nombre de usuario" max="50" />
+		<input class="form-control" name="pass" required="required" type="password" placeholder="Contraseña" max="50" />
+		<button class="btn btn-success btn-lg">Enviar</button>
+	</form>
+	
+	<div class="alert alert-info" data-th-if="${mensaje != null}">
+		<p data-th-text="${mensaje}"></p>
+	</div>
+	
+</body>
+</html>
